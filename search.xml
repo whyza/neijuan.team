@@ -5,22 +5,22 @@
     
     <entry>
       <title>RequestBody注解接收实体对象时，部分属性为null的问题</title>
-      <link href="/posts/Spring/22d70ab4.html"/>
-      <url>/posts/Spring/22d70ab4.html</url>
+      <link href="/posts/spring/22d70ab4.html"/>
+      <url>/posts/spring/22d70ab4.html</url>
       
         <content type="html"><![CDATA[<p>@RequestBody注解接收实体对象时，部分属性为null的问题</p><p><img src="http://whyzaa.oss-cn-shenzhen.aliyuncs.com/img/1.png" alt="1"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nStartFreeCoefficient 收不到值</span><br></pre></td></tr></table></figure><p>原因是lombok生成的getter、setter 如果一个字段第一个时小写，第二个是大写，那么就会导致接收不到</p><p>解决方法：</p><ul><li>nStartFreeCoefficient -&gt; noStartFreeCoefficient</li><li>是不是@Data注释、手写getter、setter方法</li></ul>]]></content>
       
       
       <categories>
           
-          <category> Spring </category>
+          <category> spring </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Spring </tag>
+            <tag> spring </tag>
             
         </tags>
       
@@ -55,22 +55,22 @@
     
     <entry>
       <title>Spring事务几种事务传播行为|记录一下</title>
-      <link href="/posts/Spring/4ee824ff.html"/>
-      <url>/posts/Spring/4ee824ff.html</url>
+      <link href="/posts/spring/4ee824ff.html"/>
+      <url>/posts/spring/4ee824ff.html</url>
       
         <content type="html"><![CDATA[<h3 id="Spring事务几种事务传播行为"><a href="#Spring事务几种事务传播行为" class="headerlink" title="Spring事务几种事务传播行为"></a>Spring事务几种事务传播行为</h3><mark class="hl-label default">PROPAGATION_REQUIRED：</mark>  如果当前存在事务，则<mark class="hl-label blue">加入</mark> 该事务；如果当前没有事务，则<mark class="hl-label red">创建一个新的事务</mark> 。<br><mark class="hl-label default">PROPAGATION_SUPPORTS：</mark>  如果当前存在事务，则<mark class="hl-label blue">加入</mark> 该事务；如果当前没有事务，则<mark class="hl-label red">以非事务的方式继续运行</mark> 。<br><mark class="hl-label default">PROPAGATION_MANDATORY：</mark>  如果当前存在事务，则<mark class="hl-label blue">加入</mark> 该事务；如果当前没有事务，则<mark class="hl-label red">抛出异常</mark> 。<br><mark class="hl-label default">PROPAGATION_REQUIRES_NEW：</mark>  <mark class="hl-label blue">创建一个新的事务</mark> ，如果当前存在事务，则把当前事务<mark class="hl-label red">挂起</mark> 。<br><mark class="hl-label default">PROPAGATION_NOT_SUPPORTED：</mark>  <mark class="hl-label blue">以非事务方式运行</mark>  ，如果当前存在事务，则把当前事务<mark class="hl-label red">挂起</mark> 。<br><mark class="hl-label default">PROPAGATION_NEVER：</mark>   <mark class="hl-label blue">以非事务方式运行</mark> ，如果当前存在事务，则<mark class="hl-label red">抛出异常</mark> 。<br><mark class="hl-label default">PROPAGATION_NESTED：</mark>   如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则该取值等价于PROPAGATION_REQUIRED]]></content>
       
       
       <categories>
           
-          <category> Spring </category>
+          <category> spring </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Spring </tag>
+            <tag> spring </tag>
             
         </tags>
       
@@ -80,22 +80,22 @@
     
     <entry>
       <title>vue本地开发环境配置跨域</title>
-      <link href="/posts/Vue/a3c8d77a.html"/>
-      <url>/posts/Vue/a3c8d77a.html</url>
+      <link href="/posts/vue/a3c8d77a.html"/>
+      <url>/posts/vue/a3c8d77a.html</url>
       
         <content type="html"><![CDATA[<h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><blockquote><p>跨域指浏览器不允许当前页面的所在的源去请求另一个源的数据。源指协议，端口，域名。只要这个3个中有一个不同就是跨域</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 协议跨域</span><br><span class="line">http://a.baidu.com 访问 https://a.baidu.com；</span><br><span class="line">2. 端口跨域</span><br><span class="line">http://a.baidu.com:8080 访问  http://a.baidu.com:8081；</span><br><span class="line">3. 域名跨域</span><br><span class="line">http://a.baidu.com 访问 http://b.baidu.com；</span><br></pre></td></tr></table></figure><h3 id="解决方案（vue）"><a href="#解决方案（vue）" class="headerlink" title="解决方案（vue）"></a>解决方案（vue）</h3><h4 id="proxyTable："><a href="#proxyTable：" class="headerlink" title="proxyTable："></a>proxyTable：</h4><p>&emsp; &emsp; 找到项目config目录下面的index.js文件；<br>&emsp; &emsp; 以豆瓣电影api为例，在proxyTable中添加如下代码。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;/mapi&#x27;</span>: &#123;</span><br><span class="line">    <span class="attr">target</span>: <span class="string">&#x27;https://api.douban.com/v2/movie/&#x27;</span>, <span class="comment">// api接口地址</span></span><br><span class="line">    <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">pathRewrite</span>: &#123; <span class="comment">// 路径重写，</span></span><br><span class="line">        <span class="string">&#x27;^/mapi&#x27;</span>: <span class="string">&#x27;&#x27;</span> <span class="comment">// 替换target中的请求地址，也就是说以后你在请求http://api.douban.com/v2/movie/的时候直接写成/mapi即可。</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">onProxyReq</span>: <span class="function"><span class="keyword">function</span>(<span class="params">proxyReq, req, res</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;原路径：&quot;</span> + req.originalUrl, <span class="string">&quot;代理路径：&quot;</span> + req.path)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="如何使用？"><a href="#如何使用？" class="headerlink" title="如何使用？"></a>如何使用？</h3><h4 id="movie-js"><a href="#movie-js" class="headerlink" title="movie.js"></a>movie.js</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> request <span class="keyword">from</span> <span class="string">&#x27;@/utils/request&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getMovieList</span>(<span class="params">url, params</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> request(&#123;</span><br><span class="line">        <span class="attr">url</span>: url,</span><br><span class="line">        <span class="attr">method</span>: <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">        params</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span></span><br><span class="line"><span class="string">`  </span></span><br><span class="line"><span class="string">------------</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">#### douban.vue</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"><span class="string">``</span></span><br><span class="line">javascript</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">    getMovieList</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&quot;@/api/movie&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;douban&quot;</span>,</span><br><span class="line">    <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="attr">moviedata</span>: <span class="literal">null</span>,</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">methods</span>: &#123;</span><br><span class="line">        <span class="attr">getMoive</span>: <span class="function"><span class="keyword">function</span>(<span class="params">start, count</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// /mapi/top250 --&gt; http://api.douban.com/v2/movie/top250</span></span><br><span class="line">            getMovieList(<span class="string">&quot;/mapi/top250&quot;</span>, &#123;</span><br><span class="line">                <span class="attr">start</span>: start,</span><br><span class="line">                <span class="attr">count</span>: count,</span><br><span class="line">                <span class="attr">apikey</span>: <span class="string">&quot;0df993c66c0c636e29ecbb5344252a4a&quot;</span></span><br><span class="line">            &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">this</span>.moviedata = res.subjects;</span><br><span class="line">                <span class="built_in">console</span>.log(res.subjects)</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><hr><h4 id="最后效果："><a href="#最后效果：" class="headerlink" title="最后效果："></a>最后效果：</h4><p>::: hljs-center</p><p><img src="https://https//whyza.github.io//usr/uploads/2019/10/3471224184.png" alt="1.png"></p><p>:::</p><p>::: hljs-center</p><p><img src="https://https//whyza.github.io//usr/uploads/2019/10/1957057929.png" alt="2.png"></p><p>:::</p><h3 id="补充一点："><a href="#补充一点：" class="headerlink" title="补充一点："></a>补充一点：</h3><p>&emsp; &emsp; 配置proxyTable的方式<strong>仅限于本地开发环境</strong>，nginx服务器配置跨域可以参考 ：<a href="https://https//whyza.github.io//web/51.html" title="nginx反向代理解决跨域">nginx反向代理解决跨域</a></p>]]></content>
       
       
       <categories>
           
-          <category> Vue </category>
+          <category> vue </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Vue </tag>
+            <tag> vue </tag>
             
         </tags>
       
@@ -105,15 +105,15 @@
     
     <entry>
       <title>Avoid mutating a prop directly since the value will be overwritten whenever</title>
-      <link href="/posts/Vue/8c084ee0.html"/>
-      <url>/posts/Vue/8c084ee0.html</url>
+      <link href="/posts/vue/8c084ee0.html"/>
+      <url>/posts/vue/8c084ee0.html</url>
       
         <content type="html"><![CDATA[<h3 id="vue报错："><a href="#vue报错：" class="headerlink" title="vue报错："></a>vue报错：</h3><p>Avoid mutating a prop directly since the value will be overwritten whenever</p><h4 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><a href="https://cn.vuejs.org/v2/guide/components-props.html#%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81">官方文档</a></h4><pre><code>所有的 prop 都使得其父子 prop 之间形成了一个单向下行绑定：父级 prop 的更新会向下流动到子组件中，但是反过来则不行。</code></pre><h3 id="错误代码："><a href="#错误代码：" class="headerlink" title="错误代码："></a>错误代码：</h3><p>父组件：<br><img src="https://whyza.github.io/usr/uploads/2020/08/2075635265.png" alt="error3.png"><br>子组件：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">cancelReply</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  <span class="built_in">this</span>.parentId = <span class="string">&quot;0&quot;</span>;</span><br><span class="line">  <span class="built_in">this</span>.replyuserName = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="built_in">this</span>.isReply = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>子组件：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">cancelReply</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  <span class="built_in">this</span>.$emit(<span class="string">&#x27;changereplyuserName&#x27;</span>,<span class="string">&quot;&quot;</span>);</span><br><span class="line">  <span class="built_in">this</span>.$emit(<span class="string">&#x27;changeparentId&#x27;</span>,<span class="string">&quot;0&quot;</span>);</span><br><span class="line">  <span class="built_in">this</span>.$emit(<span class="string">&#x27;changeisReply&#x27;</span>,<span class="literal">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>父组件：<br><img src="https://whyza.github.io/usr/uploads/2020/08/4276546712.png" alt="error4.png"></p>]]></content>
       
       
       <categories>
           
-          <category> Vue </category>
+          <category> vue </category>
           
       </categories>
       
@@ -170,7 +170,7 @@
       
         <tags>
             
-            <tag> Java mysqldump </tag>
+            <tag> java mysqldump </tag>
             
         </tags>
       
