@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>微信订阅消息常见异常及解决方法汇总</title>
+      <link href="/posts/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/95803e67.html"/>
+      <url>/posts/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/95803e67.html</url>
+      
+        <content type="html"><![CDATA[<p>订阅消息与公众号模板消息有什么不同<br>    1、订阅消息（通过 服务通知 推送），公众号模板消息（通过 公众号 推送）<br>    2、订阅消息则需要用户主动订阅消息通知，开发者才可向用户推送，但不受时间限制，具体发送信息条数根据该能力的不同类型有不同标准，</p><p>一次性订阅模板和永久性订阅有什么区别？如果需要永久性订阅怎么操作？<br>    1、一次性订阅消息：用户订阅一次后，开发者可下发一条消息，不限时间。<strong>若用户勾选了“总是保持以上选择，不再询问”且点击了允许，那么以后都默认同意订阅这条消息。用户不再做多次选择，开发者也避免了更繁琐的提醒。</strong><br>    2、长期性订阅消息：用户订阅一次后，可长期下发多条消息。目前长期性订阅消息向 政务、医疗、交通、金融、教育 等线下公共服务开放，后续将综合评估行业需求和用户体验持续完善。</p><p>常见错误码及解决方案:</p><p>1、{“msgResultCode”:”40001”,”msgResultMsg”:”invalid credential, <strong>access_token is invalid</strong> or not latest rid: 62ea1b90-6a109301-1b9924f0”}</p><p><img src="http://whyzaa.oss-cn-shenzhen.aliyuncs.com/img/image-20220803152728810.png" alt="image-20220803152728810"></p><p>token失效：出现该错误原因为多个环境共用同一个appid导致，测试环境较为常见：</p><p>解决方案: 重新获取token即可</p><p>2、{“errcode”:”43101”,”errmsg”:”<strong>user refuse to accept</strong> the msg rid: 62ea1c5f-2c5df0a5-50196a07”}</p><p><img src="http://whyzaa.oss-cn-shenzhen.aliyuncs.com/img/image-20220803152751985.png" alt="image-20220803152751985"></p><p>用户拒绝接收消息：如果用户之前曾经订阅过，则表示用户取消了订阅关系，解决方案：需用户重新订阅消息</p><p>3、{“errcode”:”40037”,”errmsg”:”invalid template_id rid: 62ea2216-58d9b83d-3b5074af”}</p><p><img src="http://whyzaa.oss-cn-shenzhen.aliyuncs.com/img/image-20220803152830664.png" alt="image-20220803152830664"></p><p>模板id不正确，解决方案：1、先检查微信后台该template_id是否生效，2、检查与申请的template_id是否一致，注意空格等</p><p>4、{“msgResultCode”:”47003”,”msgResultMsg”:”argument invalid! data.name1.value invalid rid: 62ea20ef-68b243eb-5e3c0bc6”}</p><p><img src="http://whyzaa.oss-cn-shenzhen.aliyuncs.com/img/image-20220803152856275.png" alt="image-20220803152856275"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微信小程序 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>RequestBody注解接收实体对象时，部分属性为null的问题</title>
       <link href="/posts/Spring/22d70ab4.html"/>
       <url>/posts/Spring/22d70ab4.html</url>
